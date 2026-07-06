@@ -2,9 +2,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Dependencias de sistema requeridas por mediapipe
+# Dependencias de sistema requeridas por mediapipe/sounddevice
 RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
+    libportaudio2 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
