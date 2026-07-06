@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: mimeta-face-service
+    runtime: docker
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: prod
+      - key: MIN_DETECTION_CONFIDENCE
+        value: "0.55"
+      - key: CORS_ORIGINS_OVERRIDE
+        sync: false
